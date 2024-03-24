@@ -1,0 +1,365 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.3">
+  <object class="tk.Toplevel" id="top_main" named="True">
+    <property name="background">#9dceff</property>
+    <property name="height">600</property>
+    <property name="title" translatable="yes">Solar Cell test</property>
+    <property name="width">600</property>
+    <child>
+      <object class="tk.Text" id="text_heading" named="True">
+        <property name="background">#9dceff</property>
+        <property name="blockcursor">true</property>
+        <property name="font">{Calibri} 24 {bold}</property>
+        <property name="height">0</property>
+        <property name="state">disabled</property>
+        <property name="text" translatable="yes">SOLAR CELL TEST</property>
+        <property name="width">15</property>
+        <property name="wrap">word</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.26</property>
+          <property name="rely">0.04</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="username" named="True">
+        <property name="background">#9dceff</property>
+        <property name="font">{Arial} 10 {bold}</property>
+        <property name="text" translatable="yes">USER NAME</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.04</property>
+          <property name="rely">0.19</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="username_entry" named="True">
+        <property name="font">{Arial} 12 {}</property>
+        <property name="justify">left</property>
+        <property name="state">normal</property>
+        <property name="textvariable">string:user_name</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.19</property>
+          <property name="rely">0.19</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="s_voltage" named="True">
+        <property name="background">#9dceff</property>
+        <property name="font">{Arial} 10 {}</property>
+        <property name="text" translatable="yes">START VOLTAGE</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.04</property>
+          <property name="rely">0.45</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="start_v" named="True">
+        <property name="font">{Arial} 10 {}</property>
+        <property name="justify">center</property>
+        <property name="text" translatable="yes">-0.2</property>
+        <property name="textvariable">double:start_voltage</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relheight">0.04</property>
+          <property name="relwidth">0.09</property>
+          <property name="relx">0.23</property>
+          <property name="rely">0.45</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="st_voltage" named="True">
+        <property name="background">#9dceff</property>
+        <property name="font">{Arial} 10 {}</property>
+        <property name="text" translatable="yes">STOP VOLTAGE</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.04</property>
+          <property name="rely">0.55</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="stop_v" named="True">
+        <property name="font">{Arial} 10 {}</property>
+        <property name="justify">center</property>
+        <property name="text" translatable="yes">1.2</property>
+        <property name="textvariable">double:stop_voltage</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relheight">0.04</property>
+          <property name="relwidth">0.09</property>
+          <property name="relx">0.23</property>
+          <property name="rely">0.55</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="sw_value" named="True">
+        <property name="background">#9dceff</property>
+        <property name="font">{Arial} 10 {}</property>
+        <property name="text" translatable="yes">SWEEP STEP</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.39</property>
+          <property name="rely">0.45</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="sweep_value" named="True">
+        <property name="font">{Arial} 10 {}</property>
+        <property name="justify">center</property>
+        <property name="text" translatable="yes">0.2</property>
+        <property name="textvariable">double:sweep_voltage</property>
+        <bind sequence="&lt;1&gt;" handler="ack" add="" />
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relheight">0.04</property>
+          <property name="relwidth">0.09</property>
+          <property name="relx">0.57</property>
+          <property name="rely">0.45</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="Sweep_butt" named="True">
+        <property name="command" type="command" cbtype="simple">start_sweeping</property>
+        <property name="cursor">arrow</property>
+        <property name="state">disabled</property>
+        <property name="text" translatable="yes">START SWEEP</property>
+        <property name="textvariable">string:Start_sweep</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.39</property>
+          <property name="rely">0.55</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="connect_main" named="True">
+        <property name="command" type="command" cbtype="simple">connect_keithley</property>
+        <property name="default">normal</property>
+        <property name="text" translatable="yes">CONNECT KEITHLEY</property>
+        <property name="textvariable">string:connect_device</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.58</property>
+          <property name="rely">0.19</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="conn_mux" named="True">
+        <property name="command" type="command" cbtype="simple">connect_multiplexer</property>
+        <property name="default">normal</property>
+        <property name="text" translatable="yes">CONNECT MUX</property>
+        <property name="textvariable">string:connect_mux</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.19</property>
+          <property name="rely">0.26</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Separator" id="separator1" named="True">
+        <property name="orient">horizontal</property>
+        <layout manager="place">
+          <property name="bordermode">inside</property>
+          <property name="height">5</property>
+          <property name="relheight">0.0</property>
+          <property name="relwidth">0.0</property>
+          <property name="relx">0.0</property>
+          <property name="rely">0.38</property>
+          <property name="width">600</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Separator" id="separator2" named="True">
+        <property name="orient">horizontal</property>
+        <layout manager="place">
+          <property name="bordermode">inside</property>
+          <property name="height">5</property>
+          <property name="relheight">0.0</property>
+          <property name="relwidth">0.0</property>
+          <property name="relx">0.0</property>
+          <property name="rely">0.65</property>
+          <property name="width">600</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Text" id="text3">
+        <property name="background">#9dceff</property>
+        <property name="blockcursor">true</property>
+        <property name="borderwidth">0</property>
+        <property name="font">{Arial} 10 {}</property>
+        <property name="height">1</property>
+        <property name="relief">flat</property>
+        <property name="setgrid">false</property>
+        <property name="state">normal</property>
+        <property name="text" translatable="yes">PIXEL Number</property>
+        <property name="undo">false</property>
+        <property name="width">15</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.1</property>
+          <property name="rely">0.68</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.OptionMenu" id="optionmenu3">
+        <property name="command" type="command" cbtype="simple">selectmux</property>
+        <property name="value">-</property>
+        <property name="values">1,2,3,4,5,6</property>
+        <property name="variable">int:muxnum</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.27</property>
+          <property name="rely">0.68</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Button" id="button" named="True">
+        <property name="activebackground">#ffffff</property>
+        <property name="activeforeground">#ffffff</property>
+        <property name="background">#008000</property>
+        <property name="command" type="command" cbtype="simple">muxon</property>
+        <property name="font">{Arial} 9 {bold}</property>
+        <property name="text" translatable="yes">ON</property>
+        <property name="textvariable">string:on</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.22</property>
+          <property name="rely">0.74</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Button" id="buttoff1" named="True">
+        <property name="activebackground">#ffffff</property>
+        <property name="activeforeground">#ffffff</property>
+        <property name="background">#ff0000</property>
+        <property name="command" type="command" cbtype="simple">muxoff</property>
+        <property name="font">{Arial} 9 {bold}</property>
+        <property name="text" translatable="yes">OFF</property>
+        <property name="textvariable">string:off</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.35</property>
+          <property name="rely">0.74</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="maincontrol" named="True">
+        <property name="background">#9dceff</property>
+        <property name="font">{Arial} 14 {italic}</property>
+        <property name="text" translatable="yes">MAIN
+    CONTROL
+</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.74</property>
+          <property name="rely">0.47</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="manualcontrol" named="True">
+        <property name="background">#9dceff</property>
+        <property name="font">{Arial} 14 {italic}</property>
+        <property name="text" translatable="yes">MANUAL
+     CONTROL
+</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.74</property>
+          <property name="rely">0.71</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="manual_sweep" named="True">
+        <property name="command" type="command" cbtype="simple">start_manual_sweeping</property>
+        <property name="cursor">arrow</property>
+        <property name="state">disabled</property>
+        <property name="text" translatable="yes">START MANUAL SWEEP</property>
+        <property name="textvariable">string:Start_sweep</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.20</property>
+          <property name="rely">0.83</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.OptionMenu" id="comport" named="True">
+        <property name="command" type="command" cbtype="simple">comval</property>
+        <property name="value">COM</property>
+        <property name="values">COM5,COM3,COM4,COM31,COM7</property>
+        <property name="variable">string:port</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="relx">0.05</property>
+          <property name="rely">0.26</property>
+          <property name="x">0</property>
+          <property name="y">0</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>
